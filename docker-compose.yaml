@@ -1,0 +1,17 @@
+services:
+  my-postgres:
+    image: postgres
+    environment:
+      - POSTGRES_DB=mydb
+      - POSTGRES_USER=myuser
+      - POSTGRES_PASSWORD=mypassword
+    ports:
+      - 5432:5432
+  grainger-backend:
+    image: grainger-backend
+    ports:
+      - 8080:8080
+  grainger-frontend:
+    image: grainger-frontend
+    ports:
+      - 5173:5173
