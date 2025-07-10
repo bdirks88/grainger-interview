@@ -1,21 +1,27 @@
-package com.bdirks.grainger_backend.model;
+package com.bdirks.grainger_backend.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import java.util.UUID;
 
 @Entity
-public class Product {
-  public Product() {
+@Table(name = "product")
+public class ProductEntity {
+  public ProductEntity() {
   }
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private long id;
 
-  @Column(nullable = false, unique = true)
+  @Column(unique = true, nullable = false, updatable = false)
+  private UUID productId = UUID.randomUUID();
+
   private String name;
 
   public long getId() {
@@ -24,6 +30,10 @@ public class Product {
 
   public void setId(final long id) {
     this.id = id;
+  }
+
+  public UUID getProductId() {
+    return this.productId;
   }
 
   public String getName() {

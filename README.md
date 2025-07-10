@@ -21,6 +21,8 @@ docker start my-postgres
 ```
 
 ### Start the backend application
+Assumes Java v17 is installed.
+
 From inside the grainger-backend folder, run the following command:
 
 ``` 
