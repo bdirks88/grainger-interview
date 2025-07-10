@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://grainger-frontend:5173")
 @RestController
 @RequestMapping("/products")
 public class ProductController {
