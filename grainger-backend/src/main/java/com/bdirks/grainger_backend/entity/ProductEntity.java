@@ -5,8 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -23,6 +26,9 @@ public class ProductEntity {
   private UUID productId = UUID.randomUUID();
 
   private String name;
+
+  @ManyToMany(mappedBy = "products")
+  private List<OrderEntity> orders = new ArrayList<>();
 
   public long getId() {
     return this.id;
